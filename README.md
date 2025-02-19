@@ -8,7 +8,7 @@ You can explore different implementations of state management via the branches.
 
 ### Main Branch
 
-Uses SQLite inside of Durable Objects to manage state.
+Uses Cloudflare's native SQLite inside of Durable Objects to manage state.
 
 ### In Memory State
 
