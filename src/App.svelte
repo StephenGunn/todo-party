@@ -1,35 +1,35 @@
 <script lang="ts">
-  import PartySocket from 'partysocket'
-  import { onMount } from 'svelte'
+  import PartySocket from "partysocket";
+  import { onMount } from "svelte";
 
   const ws = new PartySocket({
     host: window.location.host,
-    room: 'room1',
-    party: 'my-server',
-  })
+    room: "main",
+    party: "todo-party",
+  });
 
-  let message = $state()
+  let message = $state();
 
   onMount(() => {
-    ws.addEventListener('message', onMessage)
-    ws.send('hello from the client!')
-  })
+    ws.addEventListener("message", onMessage);
+    ws.send("hello from the client!");
+  });
 
   function onMessage(event: MessageEvent) {
-    message = event.data
+    message = event.data;
   }
 </script>
 
 <main>
   <div>
     <a href="https://vite.dev" target="_blank" rel="noreferrer">
-      <img src='/vite.svg' class="logo" alt="Vite Logo" />
+      <img src="/vite.svg" class="logo" alt="Vite Logo" />
     </a>
     <a href="https://svelte.dev" target="_blank" rel="noreferrer">
-      <img src='/svelte.svg' class="logo svelte" alt="Svelte Logo" />
+      <img src="/svelte.svg" class="logo svelte" alt="Svelte Logo" />
     </a>
     <a href="https://partykit.io" target="_blank" rel="noreferrer">
-      <img src='/partykit.png' class="logo" alt="PartyKit Logo" />
+      <img src="/partykit.png" class="logo" alt="PartyKit Logo" />
     </a>
   </div>
   <h1>Vite + Svelte + PartyKit</h1>
